@@ -1,0 +1,61 @@
+import telebot
+    
+# Замени 'TOKEN' на токен твоего бота
+# Этот токен ты получаешь от BotFather, чтобы бот мог работать
+bot = telebot.TeleBot("7739245548:AAF_n63yU9O9VOhv73g3JWipWyKQXxTwexM")
+
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, "Привет! Я твой Telegram бот. Напиши что-нибудь!И пж общайся через слешы а то я не смогу я имею команды: /hello /bye /start /mybirthday /mem /animal /animals /secretmem /secretpokemon")
+
+@bot.message_handler(commands=['hello'])
+def send_hello(message):
+    bot.reply_to(message, "Привет! Как дела?")
+
+@bot.message_handler(commands=['bye'])
+def send_bye(message):
+    bot.reply_to(message, "Пока! Удачи!")
+
+@bot.message_handler(commands=['mem'])
+def send_mybirthday(message):
+    bot.reply_to
+    with open('images/mem.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f) 
+
+@bot.message_handler(commands=['animals'])
+def send_mybirthday(message):
+    bot.reply_to
+    with open('images/mem1.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f) 
+
+@bot.message_handler(commands=['animal'])
+def send_mybirthday(message):
+    bot.reply_to
+    with open('images/mem2.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f) 
+
+@bot.message_handler(commands=['secretmem'])
+def send_mybirthday(message):
+    bot.reply_to
+    with open('images/mem3.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f) 
+
+@bot.message_handler(commands=['secretpokemon'])
+def send_mybirthday(message):
+    bot.reply_to
+    with open('images/mem4.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f) 
+
+@bot.message_handler(commands=['mybirthday'])
+def send_mybirthday(message):
+    bot.reply_to(message, "Поздравляю! С ДНЕМ РОЖДЕНИЕ!!!!")
+
+@bot.message_handler(commands=['password'])
+def send_mybirthday(message):
+    bot.reply_to(message, "")
+
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    bot.reply_to(message, message.text)
+
+bot.polling()
