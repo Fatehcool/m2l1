@@ -1,12 +1,12 @@
 import telebot
     
-# Замени 'TOKEN' на токен твоего бота
+# Замени 'TOKEН' на токен твоего бота
 # Этот токен ты получаешь от BotFather, чтобы бот мог работать
-bot = telebot.TeleBot("7739245548:AAF_n63yU9O9VOhv73g3JWipWyKQXxTwexM")
+bot = telebot.TeleBot("ТОКЕН")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Привет! Я твой Telegram бот. Напиши что-нибудь!И пж общайся через слешы а то я не смогу я имею команды: /hello /bye /start /mybirthday /mem /animal /animals /secretmem /secretpokemon")
+    bot.reply_to(message, "Привет! Я твой Telegram бот. Напиши что-нибудь!И пж общайся через слешы а то я не смогу я имею команды: /hello /bye /start /mybirthday /mem /animal /animals /secretmem /secretpokemon /trash1 /trash2")
 
 @bot.message_handler(commands=['hello'])
 def send_hello(message):
@@ -49,6 +49,16 @@ def send_mybirthday(message):
 @bot.message_handler(commands=['mybirthday'])
 def send_mybirthday(message):
     bot.reply_to(message, "Поздравляю! С ДНЕМ РОЖДЕНИЕ!!!!")
+
+@bot.message_handler(commands=['trash1'])
+def send_mybirthday(message):
+    bot.reply_to(message, "Привет Ребята если вы кидаете trash на пол то это кринж фулловый.Если вы trashite природу то это тоже кринж.Итог КИДАЙТЕ МУСОР КУДА НАДО ЙОУ.")
+
+@bot.message_handler(commands=['trash2'])
+def send_mybirthday(message):
+    bot.reply_to(message, "Чтобы поизить разделение отходов, контейнеры для разных типов отходов окрашены в разные цвета: в зеленый кладется стекло, в синий – бумажный самолетик, в желтый – картон, в оранжевый – пластик безполезный, в коричневый –  dangerous отходы, а в черный – как говориться organic.")
+    with open('images/picture.jpg', 'rb') as f:
+        bot.send_photo(message.chat.id, f)
 
 @bot.message_handler(commands=['password'])
 def send_mybirthday(message):
